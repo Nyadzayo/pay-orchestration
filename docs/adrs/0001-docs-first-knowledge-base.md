@@ -6,6 +6,14 @@ description: Decision to begin the repository as a Docusaurus documentation site
 
 # ADR-0001: Use a Docs-First Knowledge Base
 
+## Purpose
+
+Record the decision to start pay-orchestration as a documentation-first project.
+
+## Overview
+
+This decision establishes documentation as the project's first engineering artifact. It protects the project from premature implementation choices.
+
 ## Status
 
 Accepted
@@ -29,3 +37,21 @@ Use Docusaurus as the initial repository structure, with documentation available
 
 - Start with application scaffolding first: rejected because it would force framework and runtime decisions too early.
 - Use plain Markdown only: rejected because navigation, diagrams, and publishing ergonomics matter from the start.
+
+## Future Improvements
+
+- Revisit this ADR after the first implementation milestone.
+- Add criteria for when code may be introduced.
+- Link future implementation ADRs back to this decision.
+
+## Open Questions
+
+- Which documentation milestone is sufficient before implementation starts?
+- Should documentation completeness be enforced in CI?
+- How should major documentation disagreements be resolved?
+
+## Related Documentation
+
+- [Product Vision](../product-vision.md)
+- [Documentation Conventions](../documentation-conventions.md)
+- [ADR Index](./index.md)

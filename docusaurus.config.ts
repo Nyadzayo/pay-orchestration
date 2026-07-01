@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'PayRail',
-  tagline: 'Engineering documentation for payment orchestration',
+  title: 'pay-orchestration',
+  tagline: 'Documentation-first payment orchestration engineering handbook',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -74,7 +74,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'PayRail',
+      title: 'pay-orchestration',
       items: [
         {
           type: 'docSidebar',
@@ -97,7 +97,7 @@ const config: Config = {
             },
             {
               label: 'Glossary',
-              to: '/glossary',
+              to: '/ontology/glossary',
             },
           ],
         },
@@ -106,11 +106,11 @@ const config: Config = {
           items: [
             {
               label: 'Product Vision',
-              to: '/product/vision',
+              to: '/product-vision',
             },
             {
               label: 'Architecture',
-              to: '/architecture/bounded-contexts',
+              to: '/architecture/overview',
             },
             {
               label: 'ADRs',
@@ -131,12 +131,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              to: '/api/',
+              href: 'https://github.com/Nyadzayo/pay-orchestration',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} PayRail. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} pay-orchestration. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

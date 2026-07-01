@@ -1,8 +1,8 @@
-# PayRail Engineering Docs
+# pay-orchestration Engineering Docs
 
-This repository contains the docs-first [Docusaurus](https://docusaurus.io/) site for PayRail, a payment orchestration engineering knowledge base.
+This repository contains the docs-first [Docusaurus](https://docusaurus.io/) site for pay-orchestration, a payment orchestration engineering knowledge base.
 
-The site is designed to be the source of truth for product intent, domain ontology, architecture decisions, API direction, contribution rules, and documentation conventions before application code is introduced.
+The site is designed to be the source of truth for product intent, domain ontology, bounded contexts, architecture decisions, thin-slice scope, research notes, contribution rules, and documentation conventions before application code is introduced.
 
 ## Repository Context
 

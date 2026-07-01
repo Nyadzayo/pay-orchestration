@@ -1,62 +1,95 @@
 ---
 id: index
 slug: /
-title: PayRail Engineering Docs
-description: Product, ontology, architecture, ADR, and API documentation for PayRail.
+title: Documentation Milestone v0.1
+description: Documentation-first engineering foundation for pay-orchestration.
 ---
 
-# PayRail Engineering Docs
+# pay-orchestration Documentation Milestone v0.1
 
-PayRail is a docs-first engineering portal for payment orchestration. It captures product intent, domain language, architecture decisions, API direction, and operating conventions before implementation choices harden.
+pay-orchestration is a documentation-first open source project for payment orchestration. Milestone v0.1 establishes the language, boundaries, and architectural posture needed before implementation begins.
 
-The goal is to make the system understandable to product, engineering, finance, and operations teams from the first commit.
+This milestone does not design the whole platform. It defines enough shared understanding to make the first implementation slice deliberate rather than accidental.
+
+## Purpose
+
+This documentation answers questions in the order the project should reason about them:
+
+1. Why are we building this?
+2. What language does the business use?
+3. What problems are we solving?
+4. How is the system divided?
+5. What is the smallest thing we can build?
+
+## Overview
+
+Milestone v0.1 is an engineering foundation. It establishes product intent, domain language, bounded contexts, architectural direction, thin-slice scope, and research tracks before implementation begins.
 
 ## Reader Paths
 
-- Product and business readers: start with [Product vision](./product/vision.md), then [Build phases](./product/build-phases.md).
-- Engineers: start with [Ontology overview](./ontology/overview.md), then [Bounded contexts](./architecture/bounded-contexts.md).
-- Architecture reviewers: start with the [ADR index](./adrs/index.md).
-- Contributors: read the [Contribution guide](./contributing.md) and [Documentation conventions](./documentation-conventions.md).
-- New readers: keep the [Glossary](./glossary.md) open while reading.
+- Start with [Product Vision](./product-vision.md) to understand the project intent and non-goals.
+- Read [Ontology Overview](./ontology/overview.md) and [Ontology Glossary](./ontology/glossary.md) to learn the business language.
+- Read [Domain Contexts](./domain/identity.md) to understand ownership boundaries.
+- Read [Architecture Overview](./architecture/overview.md) to understand the intended system shape.
+- Read [Thin Slice Vision](./thin-slice/vision.md) to understand the first build target.
+- Use [Research Notes](./research/payment-orchestration.md) as expandable background, not as binding decisions.
 
 ## Documentation Map
 
 ```mermaid
 flowchart LR
-  Start[Start Here] --> Product[Product]
-  Start --> Glossary[Glossary]
-  Product[Product] --> Ontology[Ontology]
-  Ontology --> Architecture[Architecture]
-  Architecture --> ADRs[ADRs]
-  Ontology --> API[API]
-  ADRs --> Architecture
-  Conventions[Documentation Conventions] --> Product
-  Conventions --> ADRs
+  Foundation[Foundation] --> Product[Product Vision]
+  Product --> Ontology[Domain Ontology]
+  Ontology --> Domain[Bounded Contexts]
+  Domain --> Architecture[System Architecture]
+  Architecture --> ThinSlice[Thin Slice MVP]
+  Research[Research Notes] --> Ontology
+  Research --> Architecture
 ```
 
 ## System Context
 
 ```mermaid
 flowchart LR
-  Client[Client Product] --> Platform[PayRail]
-  Ops[Operations Team] --> Platform
-  Finance[Finance Team] --> Platform
+  Merchant[Merchant Platform] --> Orchestrator[pay-orchestration]
+  Operations[Operations Team] --> Orchestrator
+  Finance[Finance Team] --> Orchestrator
 
-  Platform --> Provider[Payment Provider]
-  Platform --> Ledger[Ledger]
-  Platform --> Events[Domain Events]
+  Orchestrator --> Provider[Payment Provider]
+  Orchestrator --> Ledger[Ledger]
+  Orchestrator --> Events[Domain Events]
 
-  Provider --> ExternalRail[External Payment Rail]
+  Provider --> Rail[Settlement Rail]
 ```
 
-## What Belongs Here
+## Milestone Scope
 
-- Domain concepts that shape product and API decisions.
-- Architecture decisions that need review or historical context.
-- Diagrams that explain payment, ledger, provider, tenant, and event flows.
-- Operational assumptions that affect engineering design.
-- Contribution rules for maintaining the documentation as a serious source of truth.
+Milestone v0.1 includes:
 
-## Current Scope
+- Product vision and non-goals.
+- Domain ontology and glossary.
+- Bounded context definitions.
+- Architecture direction using DDD, hexagonal architecture, event-driven design, and a modular monolith.
+- Thin-slice MVP definition.
+- Research notes for long-term study.
 
-This repository currently contains documentation only. It intentionally does not include application code, infrastructure manifests, deployment configuration, or provider-specific runtime integrations.
+It intentionally excludes Java code, Spring Boot code, provider integrations, Docker files, Kubernetes manifests, production database schemas, and public APIs.
+
+## Future Improvements
+
+- Add ADRs for decisions accepted during implementation planning.
+- Link research notes to concrete design decisions when those decisions are made.
+- Expand the ontology with examples from real payout, settlement, and reconciliation scenarios.
+
+## Open Questions
+
+- Which legal and compliance boundaries must influence the first implementation?
+- Which provider class should the fake provider emulate first: bank, mobile money, stablecoin, or internal ledger?
+- How much accounting rigor is required in the first ledger slice?
+
+## Related Documentation
+
+- [Product Vision](./product-vision.md)
+- [Ontology Overview](./ontology/overview.md)
+- [Architecture Overview](./architecture/overview.md)
+- [Thin Slice Vision](./thin-slice/vision.md)

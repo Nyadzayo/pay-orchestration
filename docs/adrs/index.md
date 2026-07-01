@@ -1,13 +1,19 @@
 ---
 title: ADR Index
-description: Architecture decision records for Pay Orchestration.
+description: Architecture decision records for pay-orchestration.
 ---
 
 # Architecture Decision Records
 
-Architecture Decision Records capture important choices, their context, and their consequences. They are the decision log for PayRail's product architecture.
+## Purpose
 
-Use ADRs for choices that affect boundaries, domain language, API shape, operational guarantees, or long-lived technical direction.
+Architecture Decision Records capture important choices, their context, and their consequences.
+
+## Overview
+
+ADRs are the decision log for pay-orchestration. They should record decisions that shape boundaries, domain language, API direction, operational guarantees, or long-lived technical posture.
+
+Milestone v0.1 keeps ADRs as foundation material. Future implementation milestones should add ADRs when choices become binding.
 
 ## Status Values
 
@@ -61,3 +67,21 @@ id: 0004-short-decision-title
 description: One sentence summary.
 ---
 ```
+
+## Future Improvements
+
+- Add ADR status transition rules.
+- Add supersession examples.
+- Add ADR review checklist.
+
+## Open Questions
+
+- Which Milestone v0.1 architecture assumptions should become accepted ADRs?
+- Should research notes link to ADRs when a decision uses them?
+- Who can mark an ADR accepted?
+
+## Related Documentation
+
+- [Architecture Overview](../architecture/overview.md)
+- [Documentation Conventions](../documentation-conventions.md)
+- [Product Vision](../product-vision.md)

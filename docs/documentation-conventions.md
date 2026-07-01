@@ -1,19 +1,28 @@
 ---
 title: Documentation Conventions
-description: Writing and structure rules for PayRail documentation.
+description: Writing and structure rules for pay-orchestration documentation.
 ---
 
 # Documentation Conventions
+
+## Purpose
+
+This page defines the writing and structure rules for the documentation handbook.
+
+## Overview
 
 The documentation portal is an engineering artifact. Pages should be precise, navigable, and useful during design review.
 
 ## Structure
 
-- Put product direction in `docs/product/`.
+- Put product direction in `docs/product-vision.md` until product scope justifies a larger section.
 - Put domain language and models in `docs/ontology/`.
+- Put bounded context ownership in `docs/domain/`.
 - Put architecture explanations in `docs/architecture/`.
+- Put first-slice scope in `docs/thin-slice/`.
+- Put expandable research notes in `docs/research/`.
 - Put decisions in `docs/adrs/`.
-- Put API direction in `docs/api/`.
+- Put implementation-era API direction in the relevant milestone section when API design begins.
 - Put cross-cutting reference material at the docs root.
 
 ## Page Format
@@ -31,7 +40,7 @@ Open with a short paragraph that explains the page's purpose. Prefer short secti
 
 ## Language
 
-- Use PayRail domain terms consistently.
+- Use pay-orchestration domain terms consistently.
 - Prefer concrete nouns over vague platform language.
 - Define new terms in the glossary.
 - Distinguish facts, decisions, open questions, and deferred work.
@@ -52,3 +61,21 @@ ADRs should record decisions, not meeting notes. If a decision changes, add a ne
 ## Links
 
 Use relative links between docs pages. When adding a page, update the sidebar if the page is part of the primary reading path.
+
+## Future Improvements
+
+- Add examples of strong and weak documentation changes.
+- Add naming conventions for diagrams.
+- Add a style guide for ADR titles.
+
+## Open Questions
+
+- Should every research note have an owner?
+- Should large pages be split by concept or by reader journey?
+- How should deprecated domain terms be recorded?
+
+## Related Documentation
+
+- [Contribution Guide](./contributing.md)
+- [Ontology Glossary](./ontology/glossary.md)
+- [ADR Index](./adrs/index.md)
