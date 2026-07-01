@@ -1,0 +1,62 @@
+---
+id: index
+slug: /
+title: PayRail Engineering Docs
+description: Product, ontology, architecture, ADR, and API documentation for PayRail.
+---
+
+# PayRail Engineering Docs
+
+PayRail is a docs-first engineering portal for payment orchestration. It captures product intent, domain language, architecture decisions, API direction, and operating conventions before implementation choices harden.
+
+The goal is to make the system understandable to product, engineering, finance, and operations teams from the first commit.
+
+## Reader Paths
+
+- Product and business readers: start with [Product vision](./product/vision.md), then [Build phases](./product/build-phases.md).
+- Engineers: start with [Ontology overview](./ontology/overview.md), then [Bounded contexts](./architecture/bounded-contexts.md).
+- Architecture reviewers: start with the [ADR index](./adrs/index.md).
+- Contributors: read the [Contribution guide](./contributing.md) and [Documentation conventions](./documentation-conventions.md).
+- New readers: keep the [Glossary](./glossary.md) open while reading.
+
+## Documentation Map
+
+```mermaid
+flowchart LR
+  Start[Start Here] --> Product[Product]
+  Start --> Glossary[Glossary]
+  Product[Product] --> Ontology[Ontology]
+  Ontology --> Architecture[Architecture]
+  Architecture --> ADRs[ADRs]
+  Ontology --> API[API]
+  ADRs --> Architecture
+  Conventions[Documentation Conventions] --> Product
+  Conventions --> ADRs
+```
+
+## System Context
+
+```mermaid
+flowchart LR
+  Client[Client Product] --> Platform[PayRail]
+  Ops[Operations Team] --> Platform
+  Finance[Finance Team] --> Platform
+
+  Platform --> Provider[Payment Provider]
+  Platform --> Ledger[Ledger]
+  Platform --> Events[Domain Events]
+
+  Provider --> ExternalRail[External Payment Rail]
+```
+
+## What Belongs Here
+
+- Domain concepts that shape product and API decisions.
+- Architecture decisions that need review or historical context.
+- Diagrams that explain payment, ledger, provider, tenant, and event flows.
+- Operational assumptions that affect engineering design.
+- Contribution rules for maintaining the documentation as a serious source of truth.
+
+## Current Scope
+
+This repository currently contains documentation only. It intentionally does not include application code, infrastructure manifests, deployment configuration, or provider-specific runtime integrations.

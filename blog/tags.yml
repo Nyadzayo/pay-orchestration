@@ -1,0 +1,8 @@
+docs:
+  label: Docs
+  permalink: /docs
+  description: Documentation and knowledge-base updates.
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Architecture notes and decisions.
